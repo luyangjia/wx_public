@@ -1,0 +1,133 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/css/example.css" />
+    <link rel="stylesheet" href="~/css/weui.css" />
+    <title>支付页面</title> 
+
+    <script type="text/javascript">
+
+    //调用微信JS api 支付
+    function jsApiCall()
+    {
+        WeixinJSBridge.invoke(
+        'getBrandWCPayRequest',
+         @Html.Raw(ViewBag.wxJsApiParam),//josn串
+         function (res)
+         {
+             WeixinJSBridge.log(res.err_msg);
+             // alert(res.err_code + res.err_desc + res.err_msg);
+
+             //  alert(res.err_msg);
+
+             if(res.err_msg=="get_brand_wcpay_request:ok" || res.err_msg=="ok")
+             {
+                // window.location.href="http://www.fjnewcap.com/wxpay/OverPay?strno="+String(@ViewBag.orderno);
+                 window.location.href="http://www.fjnewcap.com/wxpay/OverPay";
+              
+              }
+                 else
+                 {
+                     alert('支付失败');
+                 }
+             }
+             );
+        }
+
+        function callpay()
+        {
+            if (typeof WeixinJSBridge == "undefined")
+            {
+                if (document.addEventListener)
+                {
+                    document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+                }
+                else if (document.attachEvent)
+                {
+                    document.attachEvent('WeixinJSBridgeReady', jsApiCall);
+                    document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+                }
+            }
+            else
+            {
+                jsApiCall();
+            }
+        }
+
+    </script>
+
+
+
+
+
+</head>
+<body> 
+
+    <div class="page" id="Wxpayment">
+        <div class="hd">
+            <h1 class="page_title">充值确认</h1> 
+        </div>
+        <div class="bd"> 
+            <div class="weui_cells">
+                <div class="weui_cell">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>订单号：@ViewBag.out_trade_no</p>
+                    </div>
+
+                </div>
+                <div class="weui_cell">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>金额:￥：@ViewBag.Amount</p>
+                    </div>
+
+                </div>
+                <div class="weui_cell">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>下单时间：@ViewBag.nowdata</p>
+                    </div>
+
+                </div>
+                <div class="weui_cell">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <input id="h5pay" onclick="callpay();" type="button" value="确认支付" class="weui_btn weui_btn_primary" />
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+ 
+ 
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+     
+
+
+
+     
+
+    
+
+</body>
+
+
+
+</html>

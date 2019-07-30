@@ -1,0 +1,199 @@
+﻿@model WxPay2017.API.VO.WxUserData
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>智能水电缴费</title> 
+    <link rel="stylesheet" href="~/css/example.css" />
+    <link rel="stylesheet" href="~/css/weui.css" />
+
+</head>
+<body>
+
+    <div class="page"> 
+        <div class="hd">
+            <h1 class="page_title">充值缴费中心</h1>
+            <p class="page_desc">福建新开普</p> 
+        </div>
+        <div class="bd">  
+            <div class="weui_cells_title">帐户信息:</div>
+            <div class="weui_cells">
+                <div class="weui_cell">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>房间号：@Model.Room</p>
+                    </div>
+                     
+                </div>
+                <div class="weui_cell">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>手机号：@Model.PhoneNumber</p>
+                    </div>
+                    
+                </div>
+                <div class="weui_cell">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>帐户余额：￥@Model.Balance</p>
+                    </div>
+                    
+                </div>
+                <div class="weui_cell">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p><font color="red">@Model.Result</font></p>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+          
+            <div class="weui_cells">
+
+                @using (Html.BeginForm("Index", "WxPay", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    <div class="weui_cells">
+                        <div class="weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <h2>充值金额:</h2>
+                            </div>
+
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <input class="weui_input" name="amountid" id="amountid" type="text"   placeholder="请输入金额..."  required  />
+                            </div>
+
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <input type="hidden" name="hidopenid" id="hidopenid" value="@Model.openid" />
+                            </div>
+
+                        </div> 
+
+                    </div>
+
+
+               
+           
+    <div class="weui_btn_area">
+        <input type="submit" value="充值" class="weui_btn weui_btn_primary" />
+    </div>
+
+                } 
+
+ 
+   </div>
+
+
+    
+
+
+
+            <div class="weui_cells_title">缴费明细(红色表示未同步设备):</div>
+            <div class="weui_cells">
+                @if (Model.Feelist!=null)
+                {
+                 foreach (var item in Model.Feelist)
+                {
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary">
+                            @if (item.IsSynchro == false)
+                            {
+                                <p><font color="red">@item.Feedata</font></p>
+                            }
+                            else
+                            {
+                                <p>@item.Feedata</p>
+                            }
+                             
+                        </div>
+                        <div class="weui_cell_ft">
+                            ￥@item.FeeAmount
+                        </div>
+                    </div>
+
+                }
+                }
+                else
+                {
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>无</p>
+                        </div>
+                        <div class="weui_cell_ft"> 
+                        </div>
+                    </div>
+                }
+
+
+
+ 
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+     
+ 
+
+
+
+
+
+
+
+
+
+</body>
+</html>

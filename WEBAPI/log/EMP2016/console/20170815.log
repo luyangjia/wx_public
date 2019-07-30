@@ -1,0 +1,4 @@
+17:12:11	现金充值出错
+config缺少IsOnlyOneAccount
+   在 WxPay2017.API.BLL.MyConsole.GetAppString(String key) 位置 d:\Newcap\微信支付\API\BLL\Core\MyConsole.cs:行号 24
+   在 WxPay2017.API.BLL.BalanceBLL.Charge(String receiverId, String payerId, Decimal paymentAmount, Boolean isPay, Int32 billTypeId, Int32 payTypeId, Nullable`1 payMethodId, String operatorId, Boolean isDeductPrePay, Nullable`1 originalId, String desc, Nullable`1 UsedEnergyValue, Boolean isSync, Nullable`1 createTime) 位置 d:\Newcap\微信支付\API\BLL\Bill\BalanceBLL.cs:行号 1114

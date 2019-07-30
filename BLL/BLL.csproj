@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{80CE17DC-5B6F-4A91-BEA7-EFF429EC5B7C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WxPay2017.API.BLL</RootNamespace>
+    <AssemblyName>BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <NoWarn>1591,1587,1570,1572,1573</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\40-System.IO.Compression.1.0.0.2\lib\net40-client\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\40-System.IO.Compression.FileSystem.1.0.0.2\lib\net40-client\System.IO.Compression.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Shim">
+      <HintPath>..\packages\System.Shim.1.0.0.1\lib\net40-client\System.Shim.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bill\BalanceDetailBLL.cs" />
+    <Compile Include="Bill\BalanceBLL.cs" />
+    <Compile Include="Bill\BalanceDetailExtension.cs" />
+    <Compile Include="Bill\BalanceExtension.cs" />
+    <Compile Include="Bill\HistoryBillBLL.cs" />
+    <Compile Include="Bill\HistoryBillExtension.cs" />
+    <Compile Include="Building\BuildingBLL.cs" />
+    <Compile Include="Building\BuildingExtension.cs" />
+    <Compile Include="Core\EnumHelper.cs" />
+    <Compile Include="Core\ExpressionExtensions.cs" />
+    <Compile Include="Core\Extensions.cs" />
+    <Compile Include="Core\MyConsole.cs" />
+    <Compile Include="Core\MyHubExtension.cs" />
+    <Compile Include="Core\PerformanceTester.cs" />
+    <Compile Include="Core\SystemInfo.cs" />
+    <Compile Include="Core\MemoryCacher.cs" />
+    <Compile Include="Foundation\AttachmentExtension.cs" />
+    <Compile Include="Foundation\AttachmentBLL.cs" />
+    <Compile Include="Core\IQueryableExtension.cs" />
+    <Compile Include="Foundation\ConfigCycleSettingBLL.cs" />
+    <Compile Include="Foundation\ConfigCycleSettingExtension.cs" />
+    <Compile Include="Foundation\ConfigDetailBLL.cs" />
+    <Compile Include="Foundation\ConfigDetailExtension.cs" />
+    <Compile Include="Foundation\CoordinateBLL.cs" />
+    <Compile Include="Foundation\CoordinateExtension.cs" />
+    <Compile Include="Foundation\DictionaryBLL.cs" />
+    <Compile Include="Foundation\DictionaryExtension.cs" />
+    <Compile Include="Foundation\CityBLL.cs" />
+    <Compile Include="Foundation\DistrictBLL.cs" />
+    <Compile Include="Foundation\FeedbackBLL.cs" />
+    <Compile Include="Foundation\FeedbackExtension.cs" />
+    <Compile Include="Foundation\LogInfoBLL.cs" />
+    <Compile Include="Foundation\LogInfoExtension.cs" />
+    <Compile Include="Foundation\ProvinceBLL.cs" />
+    <Compile Include="Foundation\CityExtension.cs" />
+    <Compile Include="Foundation\DistrictExtension.cs" />
+    <Compile Include="Foundation\ProvinceExtension.cs" />
+    <Compile Include="Foundation\ExtensionFieldExtension.cs" />
+    <Compile Include="Foundation\ExtensionFieldBLL.cs" />
+    <Compile Include="Foundation\MonitoringConfigBLL.cs" />
+    <Compile Include="Foundation\MonitoringConfigExtension.cs" />
+    <Compile Include="Foundation\RequestForOvertimeBLL.cs" />
+    <Compile Include="Foundation\RequestForOvertimeExtension.cs" />
+    <Compile Include="Foundation\SceneModeBLL.cs" />
+    <Compile Include="Foundation\SceneModeConfigBLL.cs" />
+    <Compile Include="Foundation\SceneModeConfigExtension.cs" />
+    <Compile Include="Foundation\SceneModeExtension.cs" />
+    <Compile Include="Foundation\SceneModeMeterBLL.cs" />
+    <Compile Include="Foundation\SceneModeMeterExtension.cs" />
+    <Compile Include="Identity\AccountBLL.cs" />
+    <Compile Include="Identity\AuthorizationBLL.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="Maintenance\ActivityRecordBLL.cs" />
+    <Compile Include="Maintenance\ActivityRecordExtension.cs" />
+    <Compile Include="Maintenance\MaintenanceBLL.cs" />
+    <Compile Include="Maintenance\MaintenanceExtensions.cs" />
+    <Compile Include="Maintenance\PurchaseBLL.cs" />
+    <Compile Include="Maintenance\PurchaseExtension.cs" />
+    <Compile Include="Message\TemplateExtension.cs" />
+    <Compile Include="Message\TemplateBLL.cs" />
+    <Compile Include="Message\MessageBLL.cs" />
+    <Compile Include="Message\MessageExtension.cs" />
+    <Compile Include="Message\MessageRecordBLL.cs" />
+    <Compile Include="Message\MessageRecordExtension.cs" />
+    <Compile Include="Message\SubscribeBLL.cs" />
+    <Compile Include="Message\SubscribeExtension.cs" />
+    <Compile Include="Meter\BrandBLL.cs" />
+    <Compile Include="Meter\BrandExtension.cs" />
+    <Compile Include="Meter\BuildingMeterTypeUserBLL.cs" />
+    <Compile Include="Meter\BuildingMeterTypeUserExtension.cs" />
+    <Compile Include="Meter\CommandQueueBLL.cs" />
+    <Compile Include="Meter\CommandQueueExtension.cs" />
+    <Compile Include="Meter\DailyResultBLL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Meter\GroupBLL.cs" />
+    <Compile Include="Meter\GroupExtension.cs" />
+    <Compile Include="Meter\MeterExtension.cs" />
+    <Compile Include="Meter\MeterGroupBLL.cs" />
+    <Compile Include="Meter\MeterGroupExtension.cs" />
+    <Compile Include="Meter\MeterResultBLL.cs" />
+    <Compile Include="Meter\MeterResultExtension.cs" />
+    <Compile Include="Meter\MetersActionBLL.cs" />
+    <Compile Include="Meter\MetersActionExtension.cs" />
+    <Compile Include="Meter\MeterStatusBLL.cs" />
+    <Compile Include="Meter\MeterStatusExtension.cs" />
+    <Compile Include="Meter\MomentaryExtension.cs" />
+    <Compile Include="Meter\MonthlyResultBLL.cs" />
+    <Compile Include="Meter\HourlyResultBLL.cs" />
+    <Compile Include="Meter\MeterBLL.cs" />
+    <Compile Include="Meter\MomentaryBLL.cs" />
+    <Compile Include="Meter\OriginalDataBLL.cs" />
+    <Compile Include="Meter\ParameterBLL.cs" />
+    <Compile Include="Meter\ParameterExtension.cs" />
+    <Compile Include="Meter\RatedParameterBLL.cs" />
+    <Compile Include="Meter\RatedParameterDetailBLL.cs" />
+    <Compile Include="Meter\RatedParameterDetailExtension.cs" />
+    <Compile Include="Meter\RatedParameterExtension.cs" />
+    <Compile Include="Meter\ViewMeterFullInfoBLL.cs" />
+    <Compile Include="MyExpressions.cs" />
+    <Compile Include="Mylog.cs" />
+    <Compile Include="Organization\OrganizationBLL.cs" />
+    <Compile Include="Organization\OrganizationExtension.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository.cs" />
+    <Compile Include="User\PermissionBLL.cs" />
+    <Compile Include="User\PermissionExtension.cs" />
+    <Compile Include="User\RoleBLL.cs" />
+    <Compile Include="User\RoleExtension.cs" />
+    <Compile Include="User\UserAccountBLL.cs" />
+    <Compile Include="User\UserAccountExtension.cs" />
+    <Compile Include="User\UserBLL.cs" />
+    <Compile Include="Building\ViewBuildingFullInfoBLL.cs" />
+    <Compile Include="User\UserExtension.cs" />
+    <Compile Include="User\UserExtensionBLL.cs" />
+    <Compile Include="User\UserExtensionExtension.cs" />
+    <Compile Include="Web\SettingBLL.cs" />
+    <Compile Include="Web\SettingExtension.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{4bb5ebf5-0a62-41c7-9f0a-3f17bcfeab24}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VO\VO.csproj">
+      <Project>{67ff9d33-c952-4367-8e40-d391782bb1a0}</Project>
+      <Name>VO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild"> -->
+  <!-- <PropertyGroup> -->
+  <!-- <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText> -->
+  <!-- </PropertyGroup> -->
+  <!-- <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" /> -->
+  <!-- </Target> -->
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

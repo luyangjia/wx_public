@@ -1,0 +1,6 @@
+10:16:49	
+An error occurred while updating the entries. See the inner exception for details.
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 EMP2016.API.BLL.Repository`1.Create(TObject tobject) 位置 d:\Newcap\路灯\API\BLL\Repository.cs:行号 382

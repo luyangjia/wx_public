@@ -1,0 +1,953 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WEBAPI</name>
+    </assembly>
+    <members>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
+            </summary>
+            <param name="description">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The ID as a string.</returns>
+        </member>
+        <member name="T:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageConfig">
+            <summary>
+            Use this class to customize the Help Page.
+            For example you can set a custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> to supply the documentation
+            or you can provide the samples for the requests/responses.
+            </summary>
+        </member>
+        <member name="T:WxPay2017.API.WEBAPI.Areas.HelpPage.Controllers.HelpController">
+            <summary>
+            The controller that will handle requests for the help page.
+            </summary>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetDocumentationProvider(System.Web.Http.HttpConfiguration,System.Web.Http.Description.IDocumentationProvider)">
+            <summary>
+            Sets the documentation provider for help page.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="documentationProvider">The documentation provider.</param>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleObjects(System.Web.Http.HttpConfiguration,System.Collections.Generic.IDictionary{System.Type,System.Object})">
+            <summary>
+            Sets the objects that will be used by the formatters to produce sample requests/responses.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleObjects">The sample objects.</param>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type and action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample request directly for the specified media type and action with parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type of the action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample response directly for the specified media type of the action with specific parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForMediaType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Sets the sample directly for all actions with the specified media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Sets the sample directly for all actions with the specified type and media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The parameter type or return type of an action.</param>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <returns>The help page sample generator.</returns>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageConfigurationExtensions.SetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration,WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleGenerator)">
+            <summary>
+            Sets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleGenerator">The help page sample generator.</param>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageConfigurationExtensions.GetModelDescriptionGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the model description generator.
+            </summary>
+            <param name="config">The configuration.</param>
+            <returns>The <see cref="T:WxPay2017.API.WEBAPI.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator"/></returns>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageApiModel(System.Web.Http.HttpConfiguration,System.String)">
+            <summary>
+            Gets the model that represents an API displayed on the help page. The model is initialized on the first call and cached for subsequent calls.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="apiDescriptionId">The <see cref="T:System.Web.Http.Description.ApiDescription"/> ID.</param>
+            <returns>
+            An <see cref="T:WxPay2017.API.WEBAPI.Areas.HelpPage.Models.HelpPageApiModel"/>
+            </returns>
+        </member>
+        <member name="T:WxPay2017.API.WEBAPI.Areas.HelpPage.ModelDescriptions.ModelDescription">
+            <summary>
+            Describes a type model.
+            </summary>
+        </member>
+        <member name="T:WxPay2017.API.WEBAPI.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator">
+            <summary>
+            Generates model descriptions for given types.
+            </summary>
+        </member>
+        <member name="T:WxPay2017.API.WEBAPI.Areas.HelpPage.ModelDescriptions.ModelNameAttribute">
+            <summary>
+            Use this attribute to change the name of the <see cref="T:WxPay2017.API.WEBAPI.Areas.HelpPage.ModelDescriptions.ModelDescription"/> generated for a type.
+            </summary>
+        </member>
+        <member name="T:WxPay2017.API.WEBAPI.Areas.HelpPage.Models.HelpPageApiModel">
+            <summary>
+            The model that represents an API displayed on the help page.
+            </summary>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.Models.HelpPageApiModel.#ctor(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WxPay2017.API.WEBAPI.Areas.HelpPage.Models.HelpPageApiModel"/> class.
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription">
+            <summary>
+            Gets or sets the <see cref="P:WxPay2017.API.WEBAPI.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription"/> that describes the API.
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.Areas.HelpPage.Models.HelpPageApiModel.UriParameters">
+            <summary>
+            Gets or sets the <see cref="T:WxPay2017.API.WEBAPI.Areas.HelpPage.ModelDescriptions.ParameterDescription"/> collection that describes the URI parameters for the API.
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.Areas.HelpPage.Models.HelpPageApiModel.RequestDocumentation">
+            <summary>
+            Gets or sets the documentation for the request.
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.Areas.HelpPage.Models.HelpPageApiModel.RequestModelDescription">
+            <summary>
+            Gets or sets the <see cref="T:WxPay2017.API.WEBAPI.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the request body.
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.Areas.HelpPage.Models.HelpPageApiModel.RequestBodyParameters">
+            <summary>
+            Gets the request body parameter descriptions.
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.Areas.HelpPage.Models.HelpPageApiModel.ResourceDescription">
+            <summary>
+            Gets or sets the <see cref="T:WxPay2017.API.WEBAPI.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the resource.
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.Areas.HelpPage.Models.HelpPageApiModel.ResourceProperties">
+            <summary>
+            Gets the resource property descriptions.
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.Areas.HelpPage.Models.HelpPageApiModel.SampleRequests">
+            <summary>
+            Gets the sample requests associated with the API.
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.Areas.HelpPage.Models.HelpPageApiModel.SampleResponses">
+            <summary>
+            Gets the sample responses associated with the API.
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.Areas.HelpPage.Models.HelpPageApiModel.ErrorMessages">
+            <summary>
+            Gets the error messages associated with this model.
+            </summary>
+        </member>
+        <member name="T:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleGenerator">
+            <summary>
+            This class will generate the samples for the help page.
+            </summary>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleGenerator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleGenerator"/> class.
+            </summary>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleGenerator.GetSampleRequests(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the request body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleGenerator.GetSampleResponses(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the response body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleGenerator.GetSample(System.Web.Http.Description.ApiDescription,WxPay2017.API.WEBAPI.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Gets the request or response body samples.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleGenerator.GetActionSample(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Type,System.Net.Http.Formatting.MediaTypeFormatter,System.Net.Http.Headers.MediaTypeHeaderValue,WxPay2017.API.WEBAPI.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Search for samples that are provided directly through <see cref="P:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples"/>.
+            </summary>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="type">The CLR type.</param>
+            <param name="formatter">The formatter.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The sample that matches the parameters.</returns>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleGenerator.GetSampleObject(System.Type)">
+            <summary>
+            Gets the sample object that will be serialized by the formatters. 
+            First, it will look at the <see cref="P:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects"/>. If no sample object is found, it will try to create
+            one using <see cref="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleGenerator.DefaultSampleObjectFactory(WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleGenerator,System.Type)"/> (which wraps an <see cref="T:WxPay2017.API.WEBAPI.Areas.HelpPage.ObjectGenerator"/>) and other
+            factories in <see cref="P:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The sample object.</returns>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleGenerator.ResolveHttpRequestMessageType(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Resolves the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The type.</returns>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleGenerator.ResolveType(System.Web.Http.Description.ApiDescription,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},WxPay2017.API.WEBAPI.Areas.HelpPage.SampleDirection,System.Collections.ObjectModel.Collection{System.Net.Http.Formatting.MediaTypeFormatter}@)">
+            <summary>
+            Resolves the type of the action parameter or return value when <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/> is used.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or a response.</param>
+            <param name="formatters">The formatters.</param>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleGenerator.WriteSampleObjectUsingFormatter(System.Net.Http.Formatting.MediaTypeFormatter,System.Object,System.Type,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Writes the sample object using formatter.
+            </summary>
+            <param name="formatter">The formatter.</param>
+            <param name="value">The value.</param>
+            <param name="type">The type.</param>
+            <param name="mediaType">Type of the media.</param>
+            <returns></returns>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleGenerator.ActualHttpMessageTypes">
+            <summary>
+            Gets CLR types that are used as the content of <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples">
+            <summary>
+            Gets the objects that are used directly as samples for certain actions.
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects">
+            <summary>
+            Gets the objects that are serialized as samples by the supported formatters.
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories">
+            <summary>
+            Gets factories for the objects that the supported formatters will serialize as samples. Processed in order,
+            stopping when the factory successfully returns a non-<see langref="null"/> object.
+            </summary>
+            <remarks>
+            Collection includes just <see cref="M:WxPay2017.API.WEBAPI.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)"/> initially. Use
+            <code>SampleObjectFactories.Insert(0, func)</code> to provide an override and
+            <code>SampleObjectFactories.Add(func)</code> to provide a fallback.</remarks>
+        </member>
+        <member name="T:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleKey">
+            <summary>
+            This is used to identify the place where the sample should be applied.
+            </summary>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Creates a new <see cref="T:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleKey"/> based on media type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Creates a new <see cref="T:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleKey"/> based on media type and CLR type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The CLR type.</param>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleKey.#ctor(WxPay2017.API.WEBAPI.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleKey"/> based on <see cref="P:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="sampleDirection">The <see cref="P:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,WxPay2017.API.WEBAPI.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleKey"/> based on media type, <see cref="P:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The <see cref="P:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleKey.ControllerName">
+            <summary>
+            Gets the name of the controller.
+            </summary>
+            <value>
+            The name of the controller.
+            </value>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleKey.ActionName">
+            <summary>
+            Gets the name of the action.
+            </summary>
+            <value>
+            The name of the action.
+            </value>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleKey.MediaType">
+            <summary>
+            Gets the media type.
+            </summary>
+            <value>
+            The media type.
+            </value>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleKey.ParameterNames">
+            <summary>
+            Gets the parameter names.
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleKey.SampleDirection">
+            <summary>
+            Gets the <see cref="P:WxPay2017.API.WEBAPI.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.
+            </summary>
+        </member>
+        <member name="T:WxPay2017.API.WEBAPI.Areas.HelpPage.ImageSample">
+            <summary>
+            This represents an image sample on the help page. There's a display template named ImageSample associated with this class.
+            </summary>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.ImageSample.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WxPay2017.API.WEBAPI.Areas.HelpPage.ImageSample"/> class.
+            </summary>
+            <param name="src">The URL of an image.</param>
+        </member>
+        <member name="T:WxPay2017.API.WEBAPI.Areas.HelpPage.InvalidSample">
+            <summary>
+            This represents an invalid sample on the help page. There's a display template named InvalidSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:WxPay2017.API.WEBAPI.Areas.HelpPage.ObjectGenerator">
+            <summary>
+            This class will create an object of a given type and populate it with sample data.
+            </summary>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)">
+            <summary>
+            Generates an object for a given type. The type needs to be public, have a public default constructor and settable public properties/fields. Currently it supports the following types:
+            Simple types: <see cref="T:System.Int32"/>, <see cref="T:System.String"/>, <see cref="T:System.Enum"/>, <see cref="T:System.DateTime"/>, <see cref="T:System.Uri"/>, etc.
+            Complex types: POCO types.
+            Nullables: <see cref="T:System.Nullable`1"/>.
+            Arrays: arrays of simple types or complex types.
+            Key value pairs: <see cref="T:System.Collections.Generic.KeyValuePair`2"/>
+            Tuples: <see cref="T:System.Tuple`1"/>, <see cref="T:System.Tuple`2"/>, etc
+            Dictionaries: <see cref="T:System.Collections.Generic.IDictionary`2"/> or anything deriving from <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            Collections: <see cref="T:System.Collections.Generic.IList`1"/>, <see cref="T:System.Collections.Generic.IEnumerable`1"/>, <see cref="T:System.Collections.Generic.ICollection`1"/>, <see cref="T:System.Collections.IList"/>, <see cref="T:System.Collections.IEnumerable"/>, <see cref="T:System.Collections.ICollection"/> or anything deriving from <see cref="T:System.Collections.Generic.ICollection`1"/> or <see cref="T:System.Collections.IList"/>.
+            Queryables: <see cref="T:System.Linq.IQueryable"/>, <see cref="T:System.Linq.IQueryable`1"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:WxPay2017.API.WEBAPI.Areas.HelpPage.SampleDirection">
+            <summary>
+            Indicates whether the sample is used for request or response
+            </summary>
+        </member>
+        <member name="T:WxPay2017.API.WEBAPI.Areas.HelpPage.TextSample">
+            <summary>
+            This represents a preformatted text sample on the help page. There's a display template named TextSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:WxPay2017.API.WEBAPI.Areas.HelpPage.XmlDocumentationProvider">
+            <summary>
+            A custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
+            </summary>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.HelpPage.XmlDocumentationProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WxPay2017.API.WEBAPI.Areas.HelpPage.XmlDocumentationProvider"/> class.
+            </summary>
+            <param name="documentPath">The physical path to XML document.</param>
+        </member>
+        <member name="T:WxPay2017.API.WEBAPI.Areas.V1.Controllers.AccountController">
+            <summary>
+            账户
+            </summary>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.V1.Controllers.AccountController.PostRegister(WxPay2017.API.VO.RegisterUserData)">
+            <summary>
+            注册用户
+            </summary>
+            <param name="userModel">用户数据对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.V1.Controllers.AccountController.GetUkeyCode(System.String)">
+            <summary>
+            获得有效的uKey秘钥
+            </summary>
+            <param name="code">获取秘钥</param>
+            <returns>密钥</returns>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.V1.Controllers.AccountController.IsNeedPay">
+            <summary>
+            验证有效的uKey秘钥
+            </summary>
+            <param name="code">验证码</param>
+            <returns>提示信息(Ok、Error)</returns>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Areas.V1.Controllers.AccountController.CheckUkeyCode">
+            <summary>
+            验证有效的uKey秘钥
+            </summary>
+            <param name="code">验证码</param>
+            <returns>提示信息(Ok、Error)</returns>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.JsApiPay.GetOpenidAndAccessToken">
+            
+            网页授权获取用户基本信息的全部过程
+            详情请参看网页授权获取用户基本信息：http://mp.weixin.qq.com/wiki/17/c0f37d5704f0b64713d5d2c37b468d75.html
+            第一步：利用url跳转获取code
+            第二步：利用code去获取openid和access_token
+            
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.JsApiPay.GetOpenidAndAccessTokenFromCode(System.String)">
+            	    * 
+            	    * 通过code换取网页授权access_token和openid的返回数据，正确时返回的JSON数据包如下：
+            	    * {
+            	    *  "access_token":"ACCESS_TOKEN",
+            	    *  "expires_in":7200,
+            	    *  "refresh_token":"REFRESH_TOKEN",
+            	    *  "openid":"OPENID",
+            	    *  "scope":"SCOPE",
+            	    *  "unionid": "o6_bmasdasdsad6_2sgVt7hMZOPfL"
+            	    * }
+            	    * 其中access_token可用于获取共享收货地址
+            	    * openid是微信支付jsapi支付接口统一下单时必须的参数
+                    * 更详细的说明请参考网页授权获取用户基本信息：http://mp.weixin.qq.com/wiki/17/c0f37d5704f0b64713d5d2c37b468d75.html
+                    * @失败时抛异常WxPayException
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.JsApiPay.GetUnifiedOrderResult(System.String)">
+            调用统一下单，获得下单结果
+            @return 统一下单结果
+            @失败时抛异常WxPayException
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.JsApiPay.GetJsApiParameters">
+             
+            从统一下单成功返回的数据中获取微信浏览器调起jsapi支付所需的参数，
+            微信浏览器调起JSAPI时的输入参数格式如下：
+            {
+              "appId" : "wx2421b1c4370ec43b",     //公众号名称，由商户传入     
+              "timeStamp":" 1395712654",         //时间戳，自1970年以来的秒数     
+              "nonceStr" : "e61463f8efa94090b1f366cccfbbb444", //随机串     
+              "package" : "prepay_id=u802345jgfjsdfgsdg888",     
+              "signType" : "MD5",         //微信签名方式:    
+              "paySign" : "70EA570631E4BB79628FBCA90534C63FF7FADD89" //微信签名 
+            }
+            @return string 微信浏览器调起JSAPI时的输入参数，json格式可以直接做参数用
+            更详细的说明请参考网页端调起支付API：http://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=7_7
+            
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.JsApiPay.GetEditAddressParameters">
+            
+            获取收货地址js函数入口参数,详情请参考收货地址共享接口：http://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=7_9
+            @return string 共享收货地址js函数需要的参数，json格式可以直接做参数使用
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.JsApiPay.page">
+            <summary>
+            保存页面对象，因为要在类的方法中使用Page的Request对象
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.JsApiPay.openid">
+            <summary>
+            openid用于调用统一下单接口
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.JsApiPay.access_token">
+            <summary>
+            access_token用于获取收货地址js函数入口参数
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.JsApiPay.total_fee">
+            <summary>
+            商品金额，用于统一下单
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.JsApiPay.unifiedOrderResult">
+            <summary>
+            统一下单接口返回结果
+            </summary>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.MicroPay.Run(System.String,System.String,System.String)">
+            刷卡支付完整业务流程逻辑
+            @param body 商品描述
+            @param total_fee 总金额
+            @param auth_code 支付授权码
+            @throws WxPayException
+            @return 刷卡支付结果
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.MicroPay.Query(System.String,System.Int32@)">
+            
+            查询订单情况
+            @param string out_trade_no  商户订单号
+            @param int succCode         查询订单结果：0表示订单不成功，1表示订单成功，2表示继续查询
+            @return 订单查询接口返回的数据，参见协议接口
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.MicroPay.Cancel(System.String,System.Int32)">
+            	    * 
+            	    * 撤销订单，如果失败会重复调用10次
+            	    * @param string out_trade_no 商户订单号
+            	    * @param depth 调用次数，这里用递归深度表示
+                    * @return false表示撤销失败，true表示撤销成功
+        </member>
+        <member name="T:WxPay2017.API.WEBAPI.NativeNotify">
+            <summary>
+            扫码支付模式一回调处理类
+            接收微信支付后台发送的扫码结果，调用统一下单接口并将下单结果返回给微信支付后台
+            </summary>
+        </member>
+        <member name="T:WxPay2017.API.WEBAPI.Notify">
+            <summary>
+            回调处理基类
+            主要负责接收微信支付后台发送过来的数据，对数据进行签名验证
+            子类在此类基础上进行派生并重写自己的回调处理过程
+            </summary>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Notify.GetNotifyData">
+            <summary>
+            接收从微信支付后台发送过来的数据并验证签名
+            </summary>
+            <returns>微信支付后台返回的数据</returns>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.NativePay.GetPrePayUrl(System.String)">
+            生成扫描支付模式一URL
+            @param productId 商品ID
+            @return 模式一URL
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.NativePay.GetPayUrl(System.String)">
+            生成直接支付url，支付url有效期为2小时,模式二
+            @param productId 商品ID
+            @return 模式二URL
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.NativePay.ToUrlParams(System.Collections.Generic.SortedDictionary{System.String,System.Object})">
+            参数数组转换为url格式
+            @param map 参数名与参数值的映射表
+            @return URL字符串
+        </member>
+        <member name="T:WxPay2017.API.WEBAPI.ResultNotify">
+            <summary>
+            支付结果通知回调处理类
+            负责接收微信支付后台发送的支付结果并对订单有效性进行验证，将验证结果反馈给微信支付后台
+            </summary>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Controllers.AccountController.ReGetOpenId">
+            <summary>
+            获得用户登录进来的openid
+            </summary>
+        </member>
+        <member name="T:WxPay2017.API.WEBAPI.WebApiApplication">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WebApiApplication.Application_Start">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.OAuth_Token.access_token">
+            <summary>
+            网页授权接口调用凭证,注意：此access_token与基础支持的access_token不同
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.OAuth_Token.expires_in">
+            <summary>
+            access_token接口调用凭证超时时间，单位（秒）
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.OAuth_Token.refresh_token">
+            <summary>
+            用户刷新access_token
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.OAuth_Token.openid">
+            <summary>
+            用户唯一标识,请注意，在未关注公众号时，用户访问公众号的网页，也会产生一个用户和公众号唯一的OpenID
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.OAuth_Token.scope">
+            <summary>
+            用户授权作用域
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.OAuth_Token.transactionId">
+            <summary>
+            微信生成的订单号，返回给商户
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.OAuth_Token.out_trade_no">
+            <summary>
+            商户平台的订单号（自己生成）
+            </summary>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.JSONHelper.JsonDeserialize``1(System.String)">
+            <summary>
+            JSON反序列化
+            </summary>
+        </member>
+        <member name="T:WxPay2017.API.WEBAPI.NotifyModel">
+            <summary>
+            微信回调数据模型
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.NotifyModel.appid">
+            <summary>
+            公众号ID
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.NotifyModel.openid">
+            <summary>
+            客户微信ID
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.NotifyModel.out_trade_no">
+            <summary>
+            我们生成的订单号
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.NotifyModel.result_code">
+            <summary>
+            返回结果
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.NotifyModel.sign">
+            <summary>
+            签名
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.NotifyModel.total_fee">
+            <summary>
+            金额（这里注意单位是分）
+            </summary>
+        </member>
+        <member name="P:WxPay2017.API.WEBAPI.NotifyModel.transaction_id">
+            <summary>
+            微信生成的订单号
+            </summary>
+        </member>
+        <member name="T:WxPay2017.API.WEBAPI.OrderModel">
+            <summary>
+            统一下单的信息
+            </summary>
+        </member>
+        <member name="T:WxPay2017.API.WEBAPI.WxPayConfig">
+            配置账号信息
+        </member>
+        <member name="T:WxPay2017.API.WEBAPI.WxPayData">
+            <summary>
+            微信支付协议接口数据类，所有的API接口通信都依赖这个数据结构，
+            在调用接口之前先填充各个字段的值，然后进行接口通信，
+            这样设计的好处是可扩展性强，用户可随意对协议进行更改而不用重新设计数据结构，
+            还可以随意组合出不同的协议数据包，不用为每个协议设计一个数据包结构
+            </summary>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WxPayData.SetValue(System.String,System.Object)">
+                    * 设置某个字段的值
+                    * @param key 字段名
+                     * @param value 字段值
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WxPayData.GetValue(System.String)">
+                    * 根据字段名获取某个字段的值
+                    * @param key 字段名
+                     * @return key对应的字段值
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WxPayData.IsSet(System.String)">
+            判断某个字段是否已设置
+            @param key 字段名
+            @return 若字段key已被设置，则返回true，否则返回false
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WxPayData.ToXml">
+             @将Dictionary转成xml
+             @return 经转换得到的xml串
+             @throws WxPayException
+            
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WxPayData.FromXml(System.String)">
+            @将xml转为WxPayData对象并返回对象内部的数据
+            @param string 待转换的xml串
+            @return 经转换得到的Dictionary
+            @throws WxPayException
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WxPayData.ToUrl">
+            @Dictionary格式转化成url参数格式
+            @ return url格式串, 该串不包含sign字段值
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WxPayData.ToJson">
+                    * @Dictionary格式化成Json
+                     * @return json串数据
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WxPayData.ToPrintStr">
+            @values格式化成能在Web页面上显示的结果（因为web页面上不能直接输出xml格式的字符串）
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WxPayData.MakeSign">
+            @生成签名，详见签名生成算法
+            @return 签名, sign字段不参加签名
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WxPayData.CheckSign">
+            
+            检测签名是否正确
+            正确返回true，错误抛异常
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WxPayData.GetValues">
+            @获取Dictionary
+        </member>
+        <member name="T:WxPay2017.API.WEBAPI.HttpService">
+            <summary>
+            http连接基础类，负责底层的http通信
+            </summary>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.HttpService.Get(System.String)">
+            <summary>
+            处理http GET请求，返回数据
+            </summary>
+            <param name="url">请求的url地址</param>
+            <returns>http GET成功后返回的数据，失败抛WebException异常</returns>
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Log.Debug(System.String,System.String)">
+            向日志文件写入调试信息
+            @param className 类名
+            @param content 写入内容
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Log.Info(System.String,System.String)">
+            向日志文件写入运行时信息
+            @param className 类名
+            @param content 写入内容
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Log.Error(System.String,System.String)">
+            向日志文件写入出错信息
+            @param className 类名
+            @param content 写入内容
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.Log.WriteLog(System.String,System.String,System.String)">
+            实际的写日志操作
+            @param type 日志记录类型
+            @param className 类名
+            @param content 写入内容
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WxPayApi.Micropay(WxPay2017.API.WEBAPI.WxPayData,System.Int32)">
+            提交被扫支付API
+            收银员使用扫码设备读取微信用户刷卡授权码以后，二维码或条码信息传送至商户收银台，
+            由商户收银台或者商户后台调用该接口发起支付。
+            @param WxPayData inputObj 提交给被扫支付API的参数
+            @param int timeOut 超时时间
+            @throws WxPayException
+            @return 成功时返回调用结果，其他抛异常
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WxPayApi.OrderQuery(WxPay2017.API.WEBAPI.WxPayData,System.Int32)">
+               
+            查询订单
+            @param WxPayData inputObj 提交给查询订单API的参数
+            @param int timeOut 超时时间
+            @throws WxPayException
+            @return 成功时返回订单查询结果，其他抛异常
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WxPayApi.Reverse(WxPay2017.API.WEBAPI.WxPayData,System.Int32)">
+            
+            撤销订单API接口
+            @param WxPayData inputObj 提交给撤销订单API接口的参数，out_trade_no和transaction_id必填一个
+            @param int timeOut 接口超时时间
+            @throws WxPayException
+            @return 成功时返回API调用结果，其他抛异常
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WxPayApi.Refund(WxPay2017.API.WEBAPI.WxPayData,System.Int32)">
+            
+            申请退款
+            @param WxPayData inputObj 提交给申请退款API的参数
+            @param int timeOut 超时时间
+            @throws WxPayException
+            @return 成功时返回接口调用结果，其他抛异常
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WxPayApi.RefundQuery(WxPay2017.API.WEBAPI.WxPayData,System.Int32)">
+            
+            查询退款
+            提交退款申请后，通过该接口查询退款状态。退款有一定延时，
+            用零钱支付的退款20分钟内到账，银行卡支付的退款3个工作日后重新查询退款状态。
+            out_refund_no、out_trade_no、transaction_id、refund_id四个参数必填一个
+            @param WxPayData inputObj 提交给查询退款API的参数
+            @param int timeOut 接口超时时间
+            @throws WxPayException
+            @return 成功时返回，其他抛异常
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WxPayApi.DownloadBill(WxPay2017.API.WEBAPI.WxPayData,System.Int32)">
+            下载对账单
+            @param WxPayData inputObj 提交给下载对账单API的参数
+            @param int timeOut 接口超时时间
+            @throws WxPayException
+            @return 成功时返回，其他抛异常
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WxPayApi.ShortUrl(WxPay2017.API.WEBAPI.WxPayData,System.Int32)">
+            
+            转换短链接
+            该接口主要用于扫码原生支付模式一中的二维码链接转成短链接(weixin://wxpay/s/XXXXXX)，
+            减小二维码数据量，提升扫描速度和精确度。
+            @param WxPayData inputObj 提交给转换短连接API的参数
+            @param int timeOut 接口超时时间
+            @throws WxPayException
+            @return 成功时返回，其他抛异常
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WxPayApi.UnifiedOrder(WxPay2017.API.WEBAPI.WxPayData,System.Int32)">
+            
+            统一下单
+            @param WxPaydata inputObj 提交给统一下单API的参数
+            @param int timeOut 超时时间
+            @throws WxPayException
+            @return 成功时返回，其他抛异常
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WxPayApi.CloseOrder(WxPay2017.API.WEBAPI.WxPayData,System.Int32)">
+            
+            关闭订单
+            @param WxPayData inputObj 提交给关闭订单API的参数
+            @param int timeOut 接口超时时间
+            @throws WxPayException
+            @return 成功时返回，其他抛异常
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WxPayApi.ReportCostTime(System.String,System.Int32,WxPay2017.API.WEBAPI.WxPayData)">
+            
+            测速上报
+            @param string interface_url 接口URL
+            @param int timeCost 接口耗时
+            @param WxPayData inputObj参数数组
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WxPayApi.Report(WxPay2017.API.WEBAPI.WxPayData,System.Int32)">
+            
+            测速上报接口实现
+            @param WxPayData inputObj 提交给测速上报接口的参数
+            @param int timeOut 测速上报接口超时时间
+            @throws WxPayException
+            @return 成功时返回测速上报接口返回的结果，其他抛异常
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WxPayApi.GenerateOutTradeNo">
+                    * 根据当前系统时间加随机序列来生成订单号
+                     * @return 订单号
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WxPayApi.GenerateTimeStamp">
+                    * 生成时间戳，标准北京时间，时区为东八区，自1970年1月1日 0点0分0秒以来的秒数
+                     * @return 时间戳
+        </member>
+        <member name="M:WxPay2017.API.WEBAPI.WxPayApi.GenerateNonceStr">
+            生成随机串，随机串包含字母或数字
+            @return 随机串
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,48 @@
+@using System.Web.Http
+@using System.Web.Http.Controllers
+@using System.Web.Http.Description
+@using WxPay2017.API.WEBAPI.Areas.HelpPage
+@using WxPay2017.API.WEBAPI.Areas.HelpPage.Models
+@model IGrouping<HttpControllerDescriptor, ApiDescription>
+
+@{
+    var controllerDocumentation = ViewBag.DocumentationProvider != null ?
+        ViewBag.DocumentationProvider.GetDocumentation(Model.Key) :
+        null;
+}
+
+<h2 style="background: #1A237E; padding: 5px 15px; font-weight: bolder; color: white;" id="@Model.Key.ControllerName">
+    @Model.Key.ControllerName
+@if (!String.IsNullOrEmpty(controllerDocumentation))
+{
+    <span style="padding-left: 10px;">@controllerDocumentation</span>
+}
+</h2>
+<table class="help-page-table">
+    <thead>
+        <tr>
+            <th>HttpMethod</th>
+            <th>API</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var api in Model.OrderBy(x => x.HttpMethod.Method))
+        {
+            <tr>
+                <td class="api-method"><a href="@Url.Action("Api", "Help", new { apiId = api.GetFriendlyId() })">  @api.HttpMethod.Method </a></td>
+                <td class="api-name"><a href="@Url.Action("Api", "Help", new { apiId = api.GetFriendlyId() })"> <strong style="color: green;"> @("api/" + api.RelativePath.ToLower().Replace("api/", "")) </strong></a></td>
+                <td class="api-documentation">
+                    @if (api.Documentation != null)
+                    {
+                        <p>@api.Documentation</p>
+                    }
+                    else
+                    {
+                        <p>No documentation available.</p>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

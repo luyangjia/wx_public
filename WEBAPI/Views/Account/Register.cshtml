@@ -1,0 +1,99 @@
+﻿@model WxPay2017.API.WEBAPI.Models.RegistUserViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/css/example.css" />
+    <link rel="stylesheet" href="~/css/weui.css" />
+    <title>用户绑定</title>
+     
+
+</head>
+<body>
+
+    <div class="page" id="Wxpayment">
+        <div class="hd">
+            <h1 class="page_title">用户绑定</h1>
+        </div>
+        <div class="bd">
+            <div class="weui_cells">
+                  @using (Html.BeginForm("SaveData", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                  {
+                    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="weui_cell">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>@Html.LabelFor(m => m.studentno):</p>
+                        <p>@Html.TextBoxFor(m => m.studentno, new { @class = "weui_input", @placeholder = "请输入学号...",@required="true",  })</p>
+                        <p>@Html.ValidationMessageFor(m => m.studentno, "", new { @class = "text-danger" })</p>
+                    </div>
+
+                </div>
+
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>@Html.LabelFor(m => m.phoneno):</p>
+            <p>@Html.TextBoxFor(m => m.phoneno, new { @class = "weui_input", @placeholder = "请输入手机号...", @required = "true" })</p>
+        </div>
+
+    </div>
+
+
+             
+                
+                <div class="weui_cell">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <input id="h5pay"  type="submit" value="确认" class="weui_btn weui_btn_primary" />
+                    </div>
+
+                </div>
+
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <p><font color="red">@ViewBag.error</font></p> 
+            
+        </div>
+
+    </div>
+
+                       
+
+                  } 
+
+
+
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+</html>

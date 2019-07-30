@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4BB5EBF5-0A62-41C7-9F0A-3F17BCFEAB24}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WxPay2017.API.DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <NoWarn>1591,1587,1570,1572,1573</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\40-System.IO.Compression.1.0.0.2\lib\net40-client\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\40-System.IO.Compression.FileSystem.1.0.0.2\lib\net40-client\System.IO.Compression.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Shim">
+      <HintPath>..\packages\System.Shim.1.0.0.1\lib\net40-client\System.Shim.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthModels\ApplicationUser.cs" />
+    <Compile Include="EmpModels\ActivityRecord.cs" />
+    <Compile Include="EmpModels\Attachment.cs" />
+    <Compile Include="AuthModels\AuthContext.cs" />
+    <Compile Include="EmpModels\BalanceDetail.cs" />
+    <Compile Include="EmpModels\Balance.cs" />
+    <Compile Include="EmpModels\BuildingMeterTypeUser.cs" />
+    <Compile Include="EmpModels\CommandQueue.cs" />
+    <Compile Include="EmpModels\ConfigCycleSetting.cs" />
+    <Compile Include="EmpModels\ConfigDetail.cs" />
+    <Compile Include="EmpModels\District.cs" />
+    <Compile Include="EmpModels\City.cs" />
+    <Compile Include="EmpModels\Feedback.cs" />
+    <Compile Include="EmpModels\Group.cs" />
+    <Compile Include="EmpModels\LogInfo.cs" />
+    <Compile Include="EmpModels\Maintenance.cs" />
+    <Compile Include="EmpModels\MeterGroup.cs" />
+    <Compile Include="EmpModels\MetersAction.cs" />
+    <Compile Include="EmpModels\Province.cs" />
+    <Compile Include="EmpModels\Brand.cs" />
+    <Compile Include="EmpModels\Building.cs" />
+    <Compile Include="EmpModels\BuildingFullInfo.cs" />
+    <Compile Include="EmpModels\Coordinate.cs" />
+    <Compile Include="EmpModels\Dictionary.cs" />
+    <Compile Include="EmpModels\EmpContext.cs" />
+    <Compile Include="EmpModels\ExtensionField.cs" />
+    <Compile Include="EmpModels\HistoryBill.cs" />
+    <Compile Include="EmpModels\IMeterResult.cs" />
+    <Compile Include="EmpModels\Message.cs" />
+    <Compile Include="EmpModels\MessageRecord.cs" />
+    <Compile Include="EmpModels\Meter.cs" />
+    <Compile Include="EmpModels\MeterDailyResult.cs" />
+    <Compile Include="EmpModels\MeterFullInfo.cs" />
+    <Compile Include="EmpModels\MeterHourlyResult.cs" />
+    <Compile Include="EmpModels\MeterResult.cs" />
+    <Compile Include="EmpModels\MeterMonthlyResult.cs" />
+    <Compile Include="EmpModels\MeterStatus.cs" />
+    <Compile Include="EmpModels\MomentaryValue.cs" />
+    <Compile Include="EmpModels\MonitoringConfig.cs" />
+    <Compile Include="EmpModels\Organization.cs" />
+    <Compile Include="EmpModels\OriginalData.cs" />
+    <Compile Include="EmpModels\Parameter.cs" />
+    <Compile Include="EmpModels\Permission.cs" />
+    <Compile Include="EmpModels\Purchase.cs" />
+    <Compile Include="EmpModels\RatedParameter.cs" />
+    <Compile Include="EmpModels\RatedParameterDetail.cs" />
+    <Compile Include="EmpModels\RequestForOvertime.cs" />
+    <Compile Include="EmpModels\Role.cs" />
+    <Compile Include="EmpModels\SceneMode.cs" />
+    <Compile Include="EmpModels\SceneModeConfig.cs" />
+    <Compile Include="EmpModels\SceneModeMeter.cs" />
+    <Compile Include="EmpModels\Setting.cs" />
+    <Compile Include="EmpModels\StatisticalRelation.cs" />
+    <Compile Include="EmpModels\Subscribe.cs" />
+    <Compile Include="EmpModels\Template.cs" />
+    <Compile Include="EmpModels\User.cs" />
+    <Compile Include="EmpModels\UserAccount.cs" />
+    <Compile Include="EmpModels\UserClaim.cs" />
+    <Compile Include="EmpModels\UserExtension.cs" />
+    <Compile Include="EmpModels\UserLogin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild"> -->
+  <!-- <PropertyGroup> -->
+  <!-- <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText> -->
+  <!-- </PropertyGroup> -->
+  <!-- <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" /> -->
+  <!-- </Target> -->
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

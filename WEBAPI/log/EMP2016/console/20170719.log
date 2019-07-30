@@ -1,0 +1,48 @@
+23:20:54	
+An error occurred while updating the entries. See the inner exception for details.
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 EMP2016.API.BLL.Repository`1.Create(TObject tobject) 位置 d:\Newcap\路灯\API\BLL\Repository.cs:行号 382
+23:21:31	
+An error occurred while updating the entries. See the inner exception for details.
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 EMP2016.API.BLL.Repository`1.Create(TObject tobject) 位置 d:\Newcap\路灯\API\BLL\Repository.cs:行号 382
+23:28:19	
+An error occurred while updating the entries. See the inner exception for details.
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 EMP2016.API.BLL.Repository`1.Create(TObject tobject) 位置 d:\Newcap\路灯\API\BLL\Repository.cs:行号 382
+23:40:35	
+An error occurred while updating the entries. See the inner exception for details.
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 EMP2016.API.BLL.Repository`1.Create(TObject tobject) 位置 d:\Newcap\路灯\API\BLL\Repository.cs:行号 382
+23:50:30	
+An error occurred while updating the entries. See the inner exception for details.
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 EMP2016.API.BLL.Repository`1.Create(TObject tobject) 位置 d:\Newcap\路灯\API\BLL\Repository.cs:行号 382
+23:54:05	
+An error occurred while updating the entries. See the inner exception for details.
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 EMP2016.API.BLL.Repository`1.Create(TObject tobject) 位置 d:\Newcap\路灯\API\BLL\Repository.cs:行号 382
+23:57:46	
+An error occurred while updating the entries. See the inner exception for details.
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 EMP2016.API.BLL.Repository`1.Create(TObject tobject) 位置 d:\Newcap\路灯\API\BLL\Repository.cs:行号 382
+23:58:18	
+An error occurred while updating the entries. See the inner exception for details.
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 EMP2016.API.BLL.Repository`1.Create(TObject tobject) 位置 d:\Newcap\路灯\API\BLL\Repository.cs:行号 382

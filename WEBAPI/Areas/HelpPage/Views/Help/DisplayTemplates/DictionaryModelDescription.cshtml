@@ -1,0 +1,4 @@
+@using WxPay2017.API.WEBAPI.Areas.HelpPage.ModelDescriptions
+@model DictionaryModelDescription
+Dictionary of @Html.DisplayFor(m => Model.KeyModelDescription.ModelType, "ModelDescriptionLink", new { modelDescription = Model.KeyModelDescription }) [key]
+and @Html.DisplayFor(m => Model.ValueModelDescription.ModelType, "ModelDescriptionLink", new { modelDescription = Model.ValueModelDescription }) [value]
